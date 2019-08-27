@@ -15,7 +15,7 @@ jobs:
         java-version: 1.8
     - name: Build with gradle
       run:
-        ./gradlew clean assembleRelease
+        ./gradlew clean assembleRelease -PstorePassword=${{ secrets.STORE_PASSWORD }} -Palias=${{ secrets.ALIAS }} -PkeyPassword=${{ secrets.KEY_PASSWORD }}
     - uses: actions/upload-artifact@v1
       with:
         name: app-release.apk

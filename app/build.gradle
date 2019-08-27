@@ -29,9 +29,9 @@ android {
     signingConfigs {
         release {
             storeFile file('release.jks')
-            storePassword 'senha123store123'
-            keyAlias 'aliasoiteste'
-            keyPassword 'senha123alias123'
+            storePassword project.hasProperty('storePassword') ? project.storePassword : 'default'
+            keyAlias project.hasProperty('alias') ? project.alias : 'default'
+            keyPassword project.hasProperty('keyPassword') ? project.keyPassword : 'default'
         }
     }
 
