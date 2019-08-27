@@ -15,8 +15,8 @@ jobs:
         java-version: 1.8
     - name: Build with gradle
       run:
-        ./gradlew clean assembleDebug
+        ./gradlew clean assembleRelease
     - uses: actions/upload-artifact@v1
       with:
-        name: app-debug.apk
-        path: app/build/outputs/apk/debug
+        name: app-release.apk
+        path: app/build/outputs/apk/release
