@@ -16,3 +16,7 @@ jobs:
     - name: Build with gradle
       run:
         ./gradlew clean assembleDebug
+    - uses: actions/upload-artifact@v1
+      with:
+        name: app-debug.apk
+        path: app/build/outputs/apk/debug
